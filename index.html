@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The most complete practical guide to mastering Claude Code for businesses. From zero to enterprise-ready in one manual.">
+
+<!-- Open Graph / LinkedIn -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claude Code Mastery — The Complete Manual">
+<meta property="og:description" content="The most complete practical guide to mastering Claude Code for businesses. Learn how to 10x your development productivity.">
+<meta property="og:image" content="https://YOUR_VERCEL_DOMAIN/assets/images/logo.png">
+<meta property="og:url" content="https://YOUR_VERCEL_DOMAIN/">
+<meta property="og:site_name" content="AI Automation Founders">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Code Mastery — The Complete Manual">
+<meta name="twitter:description" content="The most complete practical guide to mastering Claude Code for businesses.">
+<meta name="twitter:image" content="https://YOUR_VERCEL_DOMAIN/assets/images/logo.png">
+
+<title>Claude Code Mastery — The Complete Manual</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1a1a2e;
+    line-height: 1.7;
+    font-size: 11pt;
+    max-width: 816px; /* Letter width at 96dpi */
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  /* ============ COVER PAGE ============ */
+  .cover-page {
+    min-height: 1056px; /* Letter height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(160deg, #0a0f1a 0%, #0f1b3d 40%, #1e3a6e 70%, #2563eb 100%);
+    color: white;
+    padding: 100px 60px 50px;
+    gap: 4px;
+    position: relative;
+    page-break-after: always;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 10pt;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+  }
+
+  .cover-title {
+    font-size: 42pt;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    margin-top: 0;
+    letter-spacing: -1px;
+  }
+
+  .cover-title span {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cover-subtitle {
+    font-size: 14pt;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 30px;
+    max-width: 500px;
+    line-height: 1.5;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+
+  .cover-stat {
+    text-align: center;
+  }
+
+  .cover-stat-number {
+    font-size: 28pt;
+    font-weight: 800;
+    color: #60a5fa;
+  }
+
+  .cover-stat-label {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .cover-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #60a5fa, #2563eb);
+    border-radius: 2px;
+    margin-bottom: 30px;
+  }
+
+  .cover-author {
+    font-size: 10pt;
+    color: rgba(255,255,255,0.5);
+    margin-top: auto;
+  }
+
+  /* ============ INNER PAGES ============ */
+  .page {
+    padding: 50px 60px;
+    page-break-after: always;
+  }
+
+  .page:last-child {
+    page-break-after: avoid;
+  }
+
+  /* ============ TOC PAGE ============ */
+  .toc-page {
+    padding: 50px 60px;
+    page-break-after: always;
+  }
+
+  .toc-header {
+    font-size: 10pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #2563eb;
+    margin-bottom: 10px;
+  }
+
+  .toc-title {
+    font-size: 28pt;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+  }
+
+  .toc-intro {
+    font-size: 11pt;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.7;
+    border-left: 3px solid #2563eb;
+    padding-left: 20px;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .toc-number {
+    font-size: 12pt;
+    font-weight: 800;
+    color: #2563eb;
+    min-width: 50px;
+  }
+
+  .toc-item-title {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #1a1a2e;
+    flex: 1;
+  }
+
+  .toc-item-time {
+    font-size: 9pt;
+    color: #888;
+    font-weight: 500;
+  }
+
+  /* ============ SECTION HEADERS ============ */
+  .section-header {
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  .section-number {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #2563eb;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: 26pt;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1.2;
+  }
+
+  .section-time {
+    display: inline-block;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 9pt;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+
+  /* ============ CONTENT ============ */
+  h3 {
+    font-size: 14pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    padding-left: 15px;
+    border-left: 3px solid #2563eb;
+  }
+
+  h4 {
+    font-size: 12pt;
+    font-weight: 600;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 12px;
+    color: #333;
+  }
+
+  strong {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  ul, ol {
+    margin-bottom: 15px;
+    padding-left: 24px;
+  }
+
+  li {
+    margin-bottom: 6px;
+    color: #333;
+  }
+
+  /* ============ SPECIAL BLOCKS ============ */
+  .key-insight {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border-left: 4px solid #2563eb;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+  }
+
+  .key-insight-label {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #2563eb;
+    margin-bottom: 6px;
+  }
+
+  .key-insight p {
+    margin: 0;
+    font-weight: 500;
+    color: #1a1a2e;
+  }
+
+  .warning-box {
+    background: #fff7ed;
+    border-left: 4px solid #f97316;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+  }
+
+  .warning-label {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ea580c;
+    margin-bottom: 6px;
+  }
+
+  .pro-tip {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+  }
+
+  .pro-tip-label {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #16a34a;
+    margin-bottom: 6px;
+  }
+
+  /* ============ TABLES ============ */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 10pt;
+  }
+
+  thead th {
+    background: #0f172a;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  thead th:first-child {
+    border-radius: 6px 0 0 0;
+  }
+
+  thead th:last-child {
+    border-radius: 0 6px 0 0;
+  }
+
+  tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #fafafa;
+  }
+
+  tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 6px;
+  }
+
+  tbody tr:last-child td:last-child {
+    border-radius: 0 0 6px 0;
+  }
+
+  /* ============ CODE BLOCKS ============ */
+  code {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: #f3f4f6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9.5pt;
+    color: #2563eb;
+  }
+
+  pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 9pt;
+    line-height: 1.6;
+    margin: 15px 0;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  /* ============ EXERCISE BLOCKS ============ */
+  .exercise-block {
+    background: #fafafa;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 25px 0;
+  }
+
+  .exercise-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .exercise-icon {
+    width: 28px;
+    height: 28px;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14pt;
+  }
+
+  .exercise-title {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  .exercise-step {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e5e7eb;
+  }
+
+  .exercise-step:last-child {
+    border-bottom: none;
+  }
+
+  .step-number {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    font-size: 8pt;
+    font-weight: 700;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  .step-expected {
+    color: #666;
+    font-size: 9.5pt;
+    font-style: italic;
+    margin-left: 30px;
+    margin-top: 4px;
+  }
+
+  /* ============ CHECKPOINT ============ */
+  .checkpoint {
+    background: linear-gradient(135deg, #0a0f1a, #1e3a6e);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+  }
+
+  .checkpoint-label {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #60a5fa;
+    margin-bottom: 8px;
+  }
+
+  .checkpoint p {
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  /* ============ FORMULA BLOCKS ============ */
+  .formula-block {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin: 20px 0;
+  }
+
+  .formula-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+  }
+
+  .formula-content {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5pt;
+    line-height: 1.8;
+    color: #334155;
+  }
+
+  .formula-example {
+    background: #f0fdf4;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #166534;
+  }
+
+  /* ============ CHECKLIST ============ */
+  .checklist {
+    background: #fafafa;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin: 20px 0;
+  }
+
+  .checklist-title {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+  }
+
+  .checklist-item {
+    padding: 6px 0;
+    padding-left: 28px;
+    position: relative;
+    color: #333;
+  }
+
+  .checklist-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #d1d5db;
+    border-radius: 3px;
+  }
+
+  /* ============ TEMPLATE BLOCK ============ */
+  .template-block {
+    border: 2px dashed #60a5fa;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px 0;
+    background: #eff6ff;
+  }
+
+  .template-label {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2563eb;
+    margin-bottom: 10px;
+  }
+
+  /* ============ OBJECTION BLOCK ============ */
+  .objection {
+    margin: 15px 0;
+    padding: 15px 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+  }
+
+  .objection-q {
+    font-weight: 600;
+    font-style: italic;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+
+  .objection-a {
+    color: #1a1a2e;
+    padding-left: 15px;
+    border-left: 3px solid #22c55e;
+  }
+
+  /* ============ FOLDER TREE ============ */
+  .folder-tree {
+    background: #0f172a;
+    color: #93c5fd;
+    padding: 20px 25px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5pt;
+    line-height: 1.8;
+    margin: 15px 0;
+  }
+
+  .folder-tree .comment {
+    color: #64748b;
+  }
+
+  /* ============ BACK PAGE ============ */
+  .back-page {
+    min-height: 1056px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(160deg, #0a0f1a 0%, #0f1b3d 40%, #1e3a6e 70%, #2563eb 100%);
+    color: white;
+    padding: 80px 60px;
+  }
+
+  .back-page h2 {
+    font-size: 24pt;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  .back-page p {
+    color: rgba(255,255,255,0.7);
+    font-size: 12pt;
+    max-width: 450px;
+    margin-bottom: 40px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    color: white;
+    padding: 14px 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 12pt;
+    text-decoration: none;
+    margin-bottom: 30px;
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    body { max-width: none; }
+    .cover-page, .back-page { min-height: 100vh; }
+    .page { page-break-after: always; }
+  }
+
+  /* ============ DIVIDER ============ */
+  .section-divider {
+    text-align: center;
+    margin: 40px 0;
+    color: #d1d5db;
+    font-size: 14pt;
+    letter-spacing: 10px;
+  }
+
+  /* ============ COVER CORNER IMAGES ============ */
+  .cover-headshot {
+    position: absolute;
+    top: 40px;
+    left: 45px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid rgba(255,255,255,0.3);
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.35), 0 0 50px rgba(37, 99, 235, 0.15);
+  }
+
+  .cover-logo {
+    position: absolute;
+    top: 40px;
+    right: 45px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #1c1c1e;
+    border: 2.5px solid rgba(255,255,255,0.3);
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.35), 0 0 50px rgba(37, 99, 235, 0.15);
+  }
+
+  /* ============ COVER AUTHOR TEXT ============ */
+  .cover-author-text {
+    margin: 45px 0 20px;
+  }
+
+  .cover-author-name {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 2px;
+  }
+
+  .cover-author-brand {
+    font-size: 8.5pt;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .cover-edition {
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ COVER PAGE ═══════════════════════ -->
+<div class="cover-page">
+  <img src="assets/images/headshot.png" alt="Giovanni Beggiato" class="cover-headshot">
+  <img src="assets/images/logo.png" alt="AI Automation Founders" class="cover-logo">
+
+  <div class="cover-badge">The Most Complete Practical Guide</div>
+  <h1 class="cover-title">to Master<br>Claude Code<br><span>for Businesses</span></h1>
+  <div class="cover-line"></div>
+
+  <div class="cover-author-text">
+    <p class="cover-author-name">by Giovanni Beggiato</p>
+    <p class="cover-author-brand">AI Automation Founders</p>
+  </div>
+
+  <div class="cover-stats">
+    <div class="cover-stat">
+      <div class="cover-stat-number">10</div>
+      <div class="cover-stat-label">Chapters</div>
+    </div>
+    <div class="cover-stat">
+      <div class="cover-stat-number">4-5h</div>
+      <div class="cover-stat-label">Study Time</div>
+    </div>
+    <div class="cover-stat">
+      <div class="cover-stat-number">9</div>
+      <div class="cover-stat-label">Business Use Cases</div>
+    </div>
+  </div>
+
+  <div class="cover-edition">2026 Edition</div>
+</div>
+
+<!-- ═══════════════════════ TABLE OF CONTENTS ═══════════════════════ -->
+<div class="toc-page">
+  <div class="toc-header">Navigation</div>
+  <h2 class="toc-title">Table of Contents</h2>
+  <p class="toc-intro">This manual is built around a single progressive project — <strong>"Project Alpha"</strong>. Instead of isolated exercises, you build ONE project from scratch and layer sophistication onto it as you progress through each chapter. By the end, Project Alpha is a fully configured, enterprise-ready Claude Code workspace.</p>
+
+  <ul class="toc-list">
+    <li class="toc-item">
+      <span class="toc-number">00</span>
+      <span class="toc-item-title">The Progressive Project: "Project Alpha"</span>
+      <span class="toc-item-time"></span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">01</span>
+      <span class="toc-item-title">Foundations</span>
+      <span class="toc-item-time">~30 min</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">02</span>
+      <span class="toc-item-title">The CLAUDE.md Mastery Guide</span>
+      <span class="toc-item-time">~45 min</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">03</span>
+      <span class="toc-item-title">The .claude Directory</span>
+      <span class="toc-item-time">~30 min</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">04</span>
+      <span class="toc-item-title">Core Workflows</span>
+      <span class="toc-item-time">~45 min</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">05</span>
+      <span class="toc-item-title">Skills, MCP & Sub-Agents</span>
+      <span class="toc-item-time">~30 min</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">06</span>
+      <span class="toc-item-title">Advanced Patterns</span>
+      <span class="toc-item-time">~20 min</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">07</span>
+      <span class="toc-item-title">Enterprise & Business Setup</span>
+      <span class="toc-item-time">~30 min</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">08</span>
+      <span class="toc-item-title">ROI, Pricing & Pitching AI Solutions</span>
+      <span class="toc-item-time">~30 min</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">09</span>
+      <span class="toc-item-title">Troubleshooting & Cost Management</span>
+      <span class="toc-item-time">~20 min</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">10</span>
+      <span class="toc-item-title">Templates & Checklists</span>
+      <span class="toc-item-time">Reference</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-number">++</span>
+      <span class="toc-item-title">Appendix: Power User Tips, Resources & Self-Assessment</span>
+      <span class="toc-item-time"></span>
+    </li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════ PROJECT ALPHA INTRO ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 00</div>
+    <h2 class="section-title">The Progressive Project: "Project Alpha"</h2>
+  </div>
+
+  <p>This is the backbone of the entire manual. Instead of isolated exercises, you build <strong>ONE project from scratch</strong> and layer sophistication onto it as you progress through each chapter. By the end, Project Alpha is a fully configured, enterprise-ready Claude Code workspace.</p>
+
+  <h3>What Project Alpha Is</h3>
+  <p>A fictional client project — <strong>"Alpha Consulting"</strong> needs a marketing website + a lead-processing automation. Simple enough to build without coding knowledge, complex enough to exercise every Claude Code feature.</p>
+
+  <h3>How It Threads Through the Manual</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Chapter</th>
+        <th>What You Do to Project Alpha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>01</strong></td><td>Create the <code>project-alpha/</code> folder, open Claude Code, explore all modes, check context/cost</td></tr>
+      <tr><td><strong>02</strong></td><td>Write Project Alpha's CLAUDE.md using the WHY-WHAT-HOW framework, run /init and compare</td></tr>
+      <tr><td><strong>03</strong></td><td>Build out the <code>.claude/</code> directory: settings.json, one rule file, stub the skills/ and agents/ folders</td></tr>
+      <tr><td><strong>04</strong></td><td>Use the screenshot loop to build Alpha's landing page. Use plan mode + full-stack workflow for a contact form</td></tr>
+      <tr><td><strong>05</strong></td><td>Create a skill that processes Alpha's contact form submissions. Create the 3 standard sub-agents</td></tr>
+      <tr><td><strong>06</strong></td><td>Parallelize: have 3 worktrees build 3 pages simultaneously, merge them</td></tr>
+      <tr><td><strong>07</strong></td><td>Reconfigure Project Alpha as if deploying for a 15-person marketing team with enterprise settings</td></tr>
+      <tr><td><strong>08</strong></td><td>Calculate Project Alpha's ROI: what did this setup save vs. manual? Build a pitch deck slide</td></tr>
+      <tr><td><strong>09</strong></td><td>Simulate common failures: hit token limits, break an MCP, debug a context pollution issue</td></tr>
+    </tbody>
+  </table>
+
+  <div class="key-insight">
+    <div class="key-insight-label">Key Outcome</div>
+    <p>By the end, you have a real, working project that demonstrates every concept — not just notes about concepts.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 1: FOUNDATIONS ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 01</div>
+    <h2 class="section-title">Foundations</h2>
+    <span class="section-time">~30 minutes</span>
+  </div>
+
+  <h3>1.1 — What Claude Code Actually Is</h3>
+  <p>Claude Code is Anthropic's official CLI (command-line interface) that lets Claude operate directly in your terminal and IDE. It can read files, write files, run commands, search the web, and build entire projects.</p>
+
+  <div class="key-insight">
+    <div class="key-insight-label">Paradigm Shift</div>
+    <p>Instead of copying code from a chatbot into your files, Claude Code works directly in your project — reading, writing, and executing like a developer sitting at your machine.</p>
+  </div>
+
+  <h3>1.2 — Installation</h3>
+  <h4>What you need:</h4>
+  <ul>
+    <li>A Claude Pro plan minimum ($20/month)</li>
+    <li>A computer with a terminal (Mac, Windows, or Linux)</li>
+    <li>An IDE: VS Code or Cursor (the workspace where you'll operate)</li>
+  </ul>
+
+  <h4>How to install:</h4>
+  <ul>
+    <li>One terminal command: <code>npm install -g @anthropic-ai/claude-code</code></li>
+    <li>Node.js must be installed first — it's something you install on the laptop so the AI can run JavaScript-based projects. Download from nodejs.org</li>
+  </ul>
+
+  <h4>How to authenticate:</h4>
+  <ol>
+    <li>Run <code>claude</code> in your terminal</li>
+    <li>It opens a browser window for you to log in with your Anthropic account</li>
+    <li>Once authenticated, you're ready</li>
+  </ol>
+
+  <h3>1.3 — IDE Setup</h3>
+  <p>VS Code or Cursor is the workspace where you'll operate. The terminal inside the IDE is where Claude Code runs.</p>
+  <p>Terminal mode (running <code>claude</code> directly in a standalone terminal) unlocks more features, but IDE terminal is fine for most work.</p>
+
+  <h3>1.4 — The 4 Permission Modes</h3>
+  <p>Cycle through them with <strong>Shift+Tab</strong>.</p>
+
+  <table>
+    <thead>
+      <tr><th>Mode</th><th>What It Does</th><th>When to Use</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Ask Before Edits</strong></td><td>Claude asks permission before every file change</td><td>Client work where you need to review everything</td></tr>
+      <tr><td><strong>Edit Automatically</strong></td><td>Claude edits files without asking, but still asks for commands</td><td>Your own projects — balanced speed/safety</td></tr>
+      <tr><td><strong>Plan Mode</strong></td><td>Claude researches and plans but doesn't execute</td><td>Complex builds, research phase, enterprise setups</td></tr>
+      <tr><td><strong>Bypass Permissions</strong></td><td>Claude does everything without asking</td><td>Brand new throwaway projects ONLY — never on client work</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1.5 — Context Management</h3>
+  <p><strong>Tokens</strong> are your "budget" per conversation. Think of them as the AI's working memory.</p>
+  <ul>
+    <li><code>/context</code> — Check how much of your budget is used</li>
+    <li><code>/compact</code> — Compress the conversation to free up space (Claude summarizes everything so far)</li>
+    <li><code>/clear</code> — Wipe the conversation completely and start fresh</li>
+    <li><code>/cost</code> — See how much money this session has cost</li>
+  </ul>
+
+  <div class="warning-box">
+    <div class="warning-label">Why Context Matters</div>
+    <p style="margin:0;">As context fills up, Claude's output quality degrades. It starts forgetting instructions, making mistakes, and losing focus. Managing context is an operational skill.</p>
+  </div>
+
+  <h3>1.6 — The Fundamental Workflow Loop</h3>
+  <p><strong>Task &rarr; Execute &rarr; Verify &rarr; Iterate</strong></p>
+  <p>This is the #1 thing to internalize. Most people fail because they skip verification. They ask Claude to build something, assume it worked, and move on. Then they discover 10 problems stacked on top of each other.</p>
+  <ol>
+    <li><strong>Task</strong> — Tell Claude exactly what you want</li>
+    <li><strong>Execute</strong> — Let Claude build it</li>
+    <li><strong>Verify</strong> — Check the output yourself (open in browser, run the code, test it)</li>
+    <li><strong>Iterate</strong> — Tell Claude specifically what to fix</li>
+  </ol>
+
+  <div class="exercise-block">
+    <div class="exercise-header">
+      <div class="exercise-icon">&gt;</div>
+      <span class="exercise-title">Exercise: Set Up Project Alpha</span>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">1</span> Open your terminal (or IDE terminal)
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">2</span> Create the project folder: <code>mkdir -p ~/Desktop/project-alpha</code>
+      <div class="step-expected">Expected: no output (folder created silently)</div>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">3</span> Open it in your IDE: <code>code ~/Desktop/project-alpha</code>
+      <div class="step-expected">Expected: IDE opens with an empty folder</div>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">4</span> Launch Claude Code in the IDE terminal: <code>claude</code>
+      <div class="step-expected">Expected: Claude welcome prompt appears with version number</div>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">5</span> Cycle through permission modes with <strong>Shift+Tab</strong> (repeatedly)
+      <div class="step-expected">Expected: Status bar cycles through: Ask &rarr; Auto-edit &rarr; Plan &rarr; Bypass. Stop on "Auto-edit".</div>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">6</span> Check your context budget: <code>/context</code>
+      <div class="step-expected">Expected: Token breakdown showing ~0% used</div>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">7</span> Check your spending: <code>/cost</code>
+      <div class="step-expected">Expected: Session cost near $0</div>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">8</span> Test it: "What folder am I in right now?"
+      <div class="step-expected">Expected: Claude responds with ~/Desktop/project-alpha</div>
+    </div>
+  </div>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Checkpoint</div>
+    <p>You pass Chapter 1 if you can launch Claude Code, switch between all 4 modes without hesitating, and explain what <code>/context</code> and <code>/cost</code> show.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 2: CLAUDE.MD ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 02</div>
+    <h2 class="section-title">The CLAUDE.md Mastery Guide</h2>
+    <span class="section-time">~45 minutes</span>
+  </div>
+
+  <p>This is the core of the entire manual. CLAUDE.md is the single most important file for controlling Claude Code's behavior.</p>
+
+  <h3>2.1 — What CLAUDE.md Actually Does</h3>
+  <p><strong>The "ship metaphor":</strong> CLAUDE.md is injected at the very start of every session, before anything you type. A tiny inaccuracy at launch = massive deviation at destination. It steers the AI.</p>
+
+  <div class="key-insight">
+    <div class="key-insight-label">From Boris Cherny (Creator of Claude Code)</div>
+    <p>"Anytime we see Claude do something incorrectly we add it to the CLAUDE.md, so Claude knows not to do it next time." It's a living document.</p>
+  </div>
+
+  <p><strong>Token efficiency:</strong> Without CLAUDE.md, Claude has to read your entire project every time to understand what it's working with. With CLAUDE.md, it gets a summary upfront, saving massive tokens and increasing quality.</p>
+
+  <h3>2.2 — The Six-Tier Memory Hierarchy</h3>
+
+  <p>The tutorial covers 3 layers. The official docs reveal 6. But before they make sense, you need to understand two foundational concepts.</p>
+
+  <h4>Foundation: Hidden Folders on macOS</h4>
+  <p>On a Mac, any file or folder whose name <strong>starts with a dot</strong> (<code>.</code>) is <strong>hidden</strong>. You can't see it in Finder unless you press <code>Cmd + Shift + .</code> to reveal hidden files.</p>
+  <ul>
+    <li><code>.claude/</code> — hidden</li>
+    <li><code>.DS_Store</code> — hidden</li>
+    <li><code>CLAUDE.md</code> — <strong>visible</strong> (no dot at the start)</li>
+  </ul>
+
+  <h4>Foundation: The Tilde (~) vs the Dot-Slash (./)</h4>
+  <p>These two symbols tell you WHERE on your Mac a file lives:</p>
+  <pre><code>~   = your HOME folder = /Users/your-username/
+./  = whatever project folder you're currently in</code></pre>
+  <p>So:</p>
+  <pre><code>~/.claude/CLAUDE.md     →  /Users/your-username/.claude/CLAUDE.md
+                           This is in your HOME. It has nothing to do
+                           with any project. It's YOUR personal config.
+
+./CLAUDE.md             →  /Users/your-username/Desktop/my-project/CLAUDE.md
+                           This is inside your project folder.
+                           It belongs to THIS project only.</code></pre>
+
+  <div class="warning-box">
+    <div class="warning-label">Common Confusion</div>
+    <p style="margin:0;"><strong>The tilde is NOT on your Desktop.</strong> Your home folder is one level above Desktop.</p>
+  </div>
+
+  <div class="folder-tree">
+/Users/your-username/             ← this is ~  (HOME)
+├── Desktop/
+│   └── my-project/               ← this is ./ (your project)
+├── Documents/
+├── Downloads/
+└── .claude/                      ← this is ~/.claude/ (GLOBAL, hidden)
+  </div>
+
+  <h4>Two .claude Folders — Different Places, Different Jobs</h4>
+  <p>This is the most confusing part. There are <strong>TWO</strong> <code>.claude</code> folders with the same name but in completely different locations:</p>
+
+  <div class="folder-tree">
+/Users/your-username/                         ← HOME (~)
+│
+├── .claude/                                  ← <strong style="color:#60a5fa">GLOBAL .claude</strong>
+│   │                                            Created automatically by Claude Code.
+│   │                                            Lives in your HOME folder.
+│   │                                            Affects ALL your projects.
+│   ├── settings.json                            <span class="comment">(your global settings)</span>
+│   ├── projects/                                <span class="comment">(auto-memory per project)</span>
+│   └── CLAUDE.md                                <span class="comment">(your personal preferences — create if needed)</span>
+│
+└── Desktop/my-project/                       ← YOUR PROJECT (./)
+    │
+    ├── .claude/                              ← <strong style="color:#60a5fa">PROJECT .claude</strong>
+    │   │                                        Created by you or Claude Code.
+    │   │                                        Lives INSIDE the project.
+    │   │                                        Affects ONLY this project.
+    │   ├── settings.json                        <span class="comment">(project-specific settings, e.g. MCP servers)</span>
+    │   └── rules/                               <span class="comment">(split rules when CLAUDE.md gets too long)</span>
+    │       └── *.md
+    │
+    ├── CLAUDE.md                             ← <span class="comment">the project brain (visible, shared via git)</span>
+    └── CLAUDE.local.md                       ← <span class="comment">your personal overrides (visible, NOT shared)</span>
+  </div>
+
+  <h4>The 6 Tiers — From Strongest to Weakest</h4>
+
+  <table>
+    <thead>
+      <tr><th>Tier</th><th>Name</th><th>Where It Lives</th><th>Who Sees It</th><th>What It's For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>1</strong></td><td>Managed Policy</td><td>System-level path (pushed by IT)</td><td>Every employee</td><td>"Company law" — nobody can override it. Enterprise only.</td></tr>
+      <tr><td><strong>2</strong></td><td>Project Memory</td><td><code>./CLAUDE.md</code> (project folder, visible)</td><td>Whole team via git</td><td>The main project brain. <strong>Most important for daily work.</strong></td></tr>
+      <tr><td><strong>3</strong></td><td>Project Rules</td><td><code>./.claude/rules/*.md</code> (project, hidden)</td><td>Whole team via git</td><td>Same as Tier 2, split into files when CLAUDE.md gets too long.</td></tr>
+      <tr><td><strong>4</strong></td><td>User Memory</td><td><code>~/.claude/CLAUDE.md</code> (home, hidden)</td><td>Only you</td><td>Your personal preferences across ALL projects.</td></tr>
+      <tr><td><strong>5</strong></td><td>Project Local</td><td><code>./CLAUDE.local.md</code> (project, visible)</td><td>Only you (gitignored)</td><td>Your personal overrides for ONE specific project.</td></tr>
+      <tr><td><strong>6</strong></td><td>Auto Memory</td><td><code>~/.claude/projects/&lt;id&gt;/memory/</code> (home, hidden)</td><td>Only Claude</td><td>Notes Claude writes to itself. You never touch this.</td></tr>
+    </tbody>
+  </table>
+
+  <h4>What Happens When Rules Conflict?</h4>
+  <p><strong>Higher tier wins. Always.</strong></p>
+  <pre><code>Example conflict:
+
+  Tier 4 (your personal ~/.claude/CLAUDE.md):     "Use tabs"
+  Tier 2 (project ./CLAUDE.md):                   "Use spaces"
+
+  → Claude uses SPACES, because Tier 2 beats Tier 4.
+    The project's rules override your personal preferences.
+
+Another example:
+
+  Tier 2 (project ./CLAUDE.md):                   "Use console.log for debugging"
+  Tier 1 (company managed policy):                 "Never use console.log"
+
+  → Claude follows the COMPANY rule. Tier 1 beats everything.</code></pre>
+
+  <div class="key-insight">
+    <div class="key-insight-label">Key Insight Not in Most Tutorials</div>
+    <p>More specific instructions beat broader ones. Project rules override your personal CLAUDE.md.</p>
+  </div>
+
+  <h3>2.3 — The Golden Rules for Writing CLAUDE.md</h3>
+  <ul>
+    <li><strong>Keep it short:</strong> Under 60-80 lines for project CLAUDE.md. Under 15 lines for global. Claude's system prompt already has ~50 instructions. The model can reliably follow ~150-200 total. Every line you add competes with the actual work.</li>
+    <li><strong>Most important rules at the TOP:</strong> Primacy bias — AI remembers beginnings and endings best, middles worst.</li>
+    <li><strong>Bullet points, short headings:</strong> High information density, not paragraphs.</li>
+    <li><strong>Only include what Claude can't figure out by reading the code:</strong> Don't describe what's obvious. DO include: build commands Claude can't guess, non-standard conventions, gotchas, architecture decisions.</li>
+    <li><strong>Don't dump API docs or style guides:</strong> Causes 10,000+ token bloat, reduces quality. Instead, tell Claude where to find docs when needed.</li>
+    <li><strong>Don't write vague aspirational rules:</strong> "Be smart" or "Make no mistakes" wastes tokens. Be specific: "Always use ES modules, never CommonJS."</li>
+    <li><strong>If Claude makes the same mistake 2-3 times, add a rule:</strong> The #1 way to improve your CLAUDE.md over time.</li>
+    <li><strong>Never write negative-only constraints:</strong> "Never use --foo flag" causes paralysis. Always provide alternatives: "Use --bar instead of --foo."</li>
+    <li><strong>Periodically review and prune:</strong> CLAUDE.md grows over time with unnecessary additions. Treat it like living code.</li>
+    <li><strong>Use emphasis for critical rules:</strong> "IMPORTANT" or "YOU MUST" for rules that absolutely cannot be broken.</li>
+  </ul>
+
+  <h3>2.4 — What Goes INSIDE a CLAUDE.md (the WHY-WHAT-HOW Framework)</h3>
+
+  <table>
+    <thead>
+      <tr><th>Section</th><th>Position</th><th>Contents</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>WHAT</strong></td><td>Top (most important)</td><td>Project name, one-line purpose, tech stack (just names), project structure map</td></tr>
+      <tr><td><strong>HOW</strong></td><td>Middle</td><td>Build/run commands (the ones Claude can't guess), testing commands, deployment instructions</td></tr>
+      <tr><td><strong>WHY</strong></td><td>Clarifying intent</td><td>Key architectural decisions and WHY they were made, gotchas, non-obvious behaviors</td></tr>
+      <tr><td><strong>DON'TS</strong></td><td>Bottom (guardrails)</td><td>Files Claude must never modify, patterns to avoid, specific past mistakes</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.5 — The /init Command and When to Use It</h3>
+  <ul>
+    <li>Reads entire codebase and auto-generates a CLAUDE.md summary</li>
+    <li>Great starting point for any new project folder</li>
+    <li>BUT: Always manually review and prune</li>
+    <li>Best approach: Run <code>/init</code>, then spend 2-3 minutes editing the output to match the golden rules</li>
+  </ul>
+
+  <h3>2.6 — The @import System</h3>
+  <p>CLAUDE.md files can import other files, keeping your CLAUDE.md lean while giving Claude access to detailed docs on demand:</p>
+  <pre><code>See @README.md for project overview
+Git workflow: @docs/git-instructions.md</code></pre>
+  <p>Max 5 levels deep.</p>
+
+  <div class="exercise-block">
+    <div class="exercise-header">
+      <div class="exercise-icon">&gt;</div>
+      <span class="exercise-title">Exercise: Write Project Alpha's CLAUDE.md</span>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">1</span> Run <code>/init</code> in your Project Alpha session — read what Claude generated
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">2</span> Replace it with a hand-written version using the WHY-WHAT-HOW framework (see template in Chapter 10)
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">3</span> Run <code>/clear</code>, then test: "What is this project and what stack does it use?"
+      <div class="step-expected">Expected: Claude accurately describes Alpha Consulting using info from CLAUDE.md</div>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">4</span> Check token impact with <code>/context</code> — CLAUDE.md should add only a small amount
+    </div>
+  </div>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Checkpoint</div>
+    <p>You pass Chapter 2 if you can write a CLAUDE.md from scratch under 30 lines using the WHY-WHAT-HOW framework, AND explain all 6 tiers of the memory hierarchy from memory.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 3: .CLAUDE DIRECTORY ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 03</div>
+    <h2 class="section-title">The .claude Directory</h2>
+    <span class="section-time">~30 minutes</span>
+  </div>
+
+  <p>Every file and folder inside <code>.claude/</code>, what it does, when to create it, and when to skip it.</p>
+
+  <h3>3.1 — Complete Folder Anatomy</h3>
+
+  <div class="folder-tree">
+    .claude/<br>
+    ├── settings.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Team settings (committed to git)</span><br>
+    ├── settings.local.json &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Your personal settings (git-ignored)</span><br>
+    ├── rules/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Modular instruction files</span><br>
+    │&nbsp;&nbsp; ├── code_style.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Only when CLAUDE.md gets too long</span><br>
+    │&nbsp;&nbsp; ├── security.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Security guardrails</span><br>
+    │&nbsp;&nbsp; └── frontend/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Can use subdirectories</span><br>
+    │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── react.md<br>
+    ├── skills/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Automated workflows (the money-maker)</span><br>
+    │&nbsp;&nbsp; └── skill-name/<br>
+    │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── SKILL.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Orchestrator with frontmatter</span><br>
+    │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── scripts/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Implementation files</span><br>
+    ├── agents/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Sub-agent specifications</span><br>
+    │&nbsp;&nbsp; ├── research.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Heavy research, returns summary only</span><br>
+    │&nbsp;&nbsp; ├── reviewer.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Zero-context code review</span><br>
+    │&nbsp;&nbsp; └── qa.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Automated testing</span><br>
+    ├── commands/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← Custom slash commands (legacy)</span><br>
+    └── .mcp.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← MCP server configurations</span>
+  </div>
+
+  <h3>3.2 — When to Create What</h3>
+  <table>
+    <thead>
+      <tr><th>Trigger</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Day 1 of any project</td><td>CLAUDE.md + .claude/settings.json — that's it</td></tr>
+      <tr><td>CLAUDE.md exceeds 80 lines</td><td>Split into .claude/rules/</td></tr>
+      <tr><td>Repeatable workflow identified</td><td>Create a skill</td></tr>
+      <tr><td>Need code review / testing automation</td><td>Create agent specs</td></tr>
+      <tr><td>Need external tool access</td><td>Configure MCP in .mcp.json</td></tr>
+      <tr><td>Working in a team</td><td>Add settings.json with permissions</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.3 — Rules Folder Details</h3>
+  <ul>
+    <li>All <code>.md</code> files in <code>.claude/rules/</code> auto-load into context</li>
+    <li>Can use YAML frontmatter with <code>paths:</code> to scope rules to specific files</li>
+    <li>Can symlink shared rules across repos: <code>ln -s ~/company-standards .claude/rules/shared</code></li>
+    <li>Project rules override user rules</li>
+  </ul>
+
+  <h3>3.4 — Settings.json Details</h3>
+  <ul>
+    <li><code>permissions</code>: allow/deny/ask rules for tools (e.g., deny reading .env files)</li>
+    <li><code>hooks</code>: automated scripts that run at lifecycle events</li>
+    <li>Settings precedence: managed (enterprise) > CLI args > local project > shared project > user</li>
+  </ul>
+
+  <div class="exercise-block">
+    <div class="exercise-header">
+      <div class="exercise-icon">&gt;</div>
+      <span class="exercise-title">Exercise: Build Project Alpha's .claude/ Directory</span>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">1</span> Tell Claude: "Create the .claude directory with settings.json, a rules folder with one security rule, and stub folders for skills and agents"
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">2</span> Verify settings.json has proper permission rules (deny reading .env, .ssh)
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">3</span> Verify security.md has basic guardrails (no hardcoded keys, env vars only)
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">4</span> Check context impact with <code>/context</code> — this is why you keep rules files short
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">5</span> Add a CLAUDE.local.md for your personal overrides (git-ignored)
+    </div>
+  </div>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Checkpoint</div>
+    <p>You pass Chapter 3 if you can draw the <code>.claude/</code> folder tree from memory and explain WHEN to create each item (not just what it is).</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 4: CORE WORKFLOWS ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 04</div>
+    <h2 class="section-title">Core Workflows</h2>
+    <span class="section-time">~45 minutes</span>
+  </div>
+
+  <h3>4.1 — Website/Landing Page Design (The Screenshot Loop)</h3>
+  <p>The most effective method for building visual designs with Claude Code:</p>
+  <ol>
+    <li>Find design inspiration (godly.website, Dribbble, or any site you like)</li>
+    <li>Take a full-page screenshot (browser DevTools &rarr; Cmd+Shift+P &rarr; "Capture full size screenshot")</li>
+    <li>Resize image to under 5MB</li>
+    <li>Give screenshot + your brand info to Claude: "Rebuild this design with my content"</li>
+    <li>Claude builds it. Take a screenshot of the result.</li>
+    <li>Compare side by side. Tell Claude what to fix via voice (3x faster than typing)</li>
+    <li>Repeat until 95%+ accurate (usually 3-5 rounds, ~10 minutes total)</li>
+  </ol>
+
+  <div class="pro-tip">
+    <div class="pro-tip-label">Pro Tip: Voice Transcription</div>
+    <p style="margin:0;">Use FN key (Mac) or WhisprFlow for dictation. You speak 3x faster than you type. Boris and multiple power users emphasize this as a game-changer.</p>
+  </div>
+
+  <h3>4.2 — Full-Stack App Building Workflow</h3>
+  <ol>
+    <li><strong>Voice your requirements</strong> &rarr; Claude captures everything</li>
+    <li><strong>Switch to Plan Mode</strong> (Shift+Tab twice) &rarr; Claude researches and creates a structured plan</li>
+    <li><strong>Review the plan</strong> &rarr; Go back and forth until you're happy with architecture decisions</li>
+    <li><strong>Switch to Edit mode</strong> &rarr; Claude builds while you set up external services</li>
+    <li><strong>Test in browser</strong> &rarr; Verify each feature works</li>
+    <li><strong>Provide specific feedback</strong> &rarr; "Make the header smaller, change font to serif, add loading state"</li>
+    <li><strong>Deploy</strong> &rarr; Netlify/Vercel push</li>
+  </ol>
+
+  <div class="key-insight">
+    <div class="key-insight-label">Key Insight</div>
+    <p>"1 minute of planning saves 10 minutes of building." Without plan mode, a complex app took 35+ minutes. With plan mode, 10-20 minutes.</p>
+  </div>
+
+  <h3>4.3 — Automation/Workflow Building</h3>
+  <ol>
+    <li>Define the workflow in plain language (voice or text)</li>
+    <li>Create the skill structure: <code>.claude/skills/skill-name/SKILL.md</code> + <code>scripts/</code></li>
+    <li>SKILL.md is the orchestrator: front matter tells Claude when to use it, body is the step-by-step checklist</li>
+    <li>Test with small dataset first (25-100 items)</li>
+    <li>Add timing instrumentation ("tell me how long each step took")</li>
+    <li>Scale up once quality is confirmed</li>
+    <li>Optionally deploy as API via Modal ($5 free credits)</li>
+  </ol>
+
+  <div class="warning-box">
+    <div class="warning-label">Security Warning</div>
+    <p style="margin:0;">Never charge money for an AI-built app without a security audit. Keep URLs non-obvious. For internal/team tools this is less critical.</p>
+  </div>
+
+  <div class="exercise-block">
+    <div class="exercise-header">
+      <div class="exercise-icon">&gt;</div>
+      <span class="exercise-title">Exercise: Build Project Alpha's Landing Page</span>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">1</span> Find a design reference and take a full-page screenshot (save to project-alpha/reference.png)
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">2</span> Give it to Claude with the screenshot loop: "Rebuild this as index.html for Alpha Consulting using Tailwind CSS via CDN"
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">3</span> Preview in browser, compare side by side, identify 3 differences
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">4</span> Give specific feedback (use voice if possible) — 2-3 rounds max
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">5</span> Switch to Plan Mode for a contact form page, review the plan, then build it
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">6</span> Verify both pages in browser, check <code>/cost</code>
+    </div>
+  </div>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Checkpoint</div>
+    <p>You pass Chapter 4 if you can describe the screenshot loop from memory, explain when to use Plan Mode vs Edit mode, and have built at least 2 pages for Project Alpha.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 5: SKILLS, MCP, SUB-AGENTS ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 05</div>
+    <h2 class="section-title">Skills, MCP & Sub-Agents</h2>
+    <span class="section-time">~30 minutes</span>
+  </div>
+
+  <h3>5.1 — Skills (The Most Economically Valuable Feature)</h3>
+  <p>Automated workflows that Claude can execute. Think of them as "recipes" — you write the steps once, Claude follows them every time.</p>
+
+  <div class="key-insight">
+    <div class="key-insight-label">Business Value</div>
+    <p>A skill that saves 30 minutes of manual work, running 10 times a day, saves 5 hours daily. 1,000 leads were scraped in 87 seconds vs 30+ minutes manually.</p>
+  </div>
+
+  <h4>SKILL.md Structure:</h4>
+  <pre><code>---
+name: skill-name
+description: What this does and WHEN to use it (include trigger words)
+allowed-tools: Bash, Read, Write, WebFetch
+---
+# Steps
+1. First do X
+2. Then do Y
+3. Verify by Z</code></pre>
+
+  <h4>Key Details:</h4>
+  <ul>
+    <li>Only the frontmatter (~60 tokens) loads into context at startup</li>
+    <li>Full instructions load ONLY when the skill is invoked</li>
+    <li>This is <strong>100x more efficient</strong> than putting everything in CLAUDE.md</li>
+    <li>Skills can use <code>$ARGUMENTS</code> for dynamic inputs</li>
+  </ul>
+
+  <h3>5.2 — MCP Servers (Other People's Skills)</h3>
+  <p>Pre-built integrations that give Claude access to external tools (browsers, email, databases, task managers).</p>
+
+  <div class="warning-box">
+    <div class="warning-label">Token Cost Reality</div>
+    <p style="margin:0;">Each MCP tool costs 1,000-1,600 tokens just being loaded. A full MCP like ClickUp can consume 20,000 tokens before you even start working. That's 10% of your context gone.</p>
+  </div>
+
+  <h4>The Decision Rule:</h4>
+  <ul>
+    <li>Use MCP for quick prototyping (5-minute setup, test if the approach works)</li>
+    <li>If you use it more than a few times &rarr; convert to a skill</li>
+    <li>Always-worth-it MCPs: Chrome DevTools (speed), Supabase (database)</li>
+    <li>Check token impact with <code>/context</code> after installing any MCP</li>
+  </ul>
+
+  <h3>5.3 — Sub-Agents (Parallel Workers)</h3>
+  <p>Separate Claude instances that the main Claude spawns to handle specific tasks. Each has its own isolated context window.</p>
+
+  <h4>The Three Standard Sub-Agents:</h4>
+  <table>
+    <thead>
+      <tr><th>Agent</th><th>Purpose</th><th>Key Benefit</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Research</strong></td><td>Heavy research, web scraping, data gathering</td><td>Returns only summary — saves 50x on tokens</td></tr>
+      <tr><td><strong>Reviewer</strong></td><td>ZERO project context, reviews code objectively</td><td>Unbiased critique without knowing your intent</td></tr>
+      <tr><td><strong>QA</strong></td><td>Runs tests, checks if things work</td><td>Reports pass/fail without polluting parent context</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pro-tip">
+    <div class="pro-tip-label">Critical Math</div>
+    <p style="margin:0;">10 sub-agents at 95% success rate = only 59% chance ALL succeed (probabilities multiply). Test at small scale first (100 items) before scaling to 1,000+.</p>
+  </div>
+
+  <div class="exercise-block">
+    <div class="exercise-header">
+      <div class="exercise-icon">&gt;</div>
+      <span class="exercise-title">Exercise: Create Project Alpha's Skill and Sub-Agents</span>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">1</span> Create a lead-processor skill at <code>.claude/skills/lead-processor/SKILL.md</code>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">2</span> Verify proper frontmatter with trigger words in description
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">3</span> Create three agent specs in <code>.claude/agents/</code>: research.md, reviewer.md, qa.md
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">4</span> Test the skill with a small CSV of 5 fake contact form entries
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">5</span> Check token impact: skills add ~60 tokens each vs. 1,600 per MCP tool
+    </div>
+  </div>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Checkpoint</div>
+    <p>You pass Chapter 5 if you can explain the difference between a skill, an MCP, and a sub-agent — and tell a client WHEN to use each one.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 6: ADVANCED PATTERNS ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 06</div>
+    <h2 class="section-title">Advanced Patterns</h2>
+    <span class="section-time">~20 minutes</span>
+  </div>
+
+  <h3>6.1 — Parallelization with Sub-Agents</h3>
+  <p><strong>Serial:</strong> Process 100 emails one by one &rarr; 36 seconds</p>
+  <p><strong>Parallel:</strong> 10 sub-agents process 10 emails each &rarr; same work done simultaneously</p>
+  <p>Real example: 1,000 emails classified in ~60 seconds with 10 parallel sub-agents.</p>
+
+  <ul>
+    <li><strong>When to parallelize:</strong> When you have many independent items to process (emails, leads, pages, files)</li>
+    <li><strong>When NOT to:</strong> Simple single tasks where spawning sub-agents takes longer than just doing it</li>
+  </ul>
+
+  <h3>6.2 — Agent Teams (Experimental, High Cost)</h3>
+  <p>Multiple Claude instances that can communicate DIRECTLY with each other (not just through a parent). They share a task list and coordinate autonomously.</p>
+
+  <p><strong>Enable:</strong> Add <code>"env": {"CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"}</code> in settings.json.</p>
+
+  <h4>When to use:</h4>
+  <ul>
+    <li><strong>Design exploration:</strong> Spawn 3 design agents, each creates a fundamentally different approach</li>
+    <li><strong>Research synthesis:</strong> Spawn 3 research agents, each investigates a different angle</li>
+    <li><strong>Security audit:</strong> Spawn 10 scanner agents across a large codebase</li>
+  </ul>
+
+  <div class="warning-box">
+    <div class="warning-label">Cost Warning</div>
+    <p style="margin:0;">Each agent is a separate Claude instance. <strong>7x more expensive</strong> than single-thread. "Trade money for time EXPLICITLY." Real example: a security audit cost $80, used 1.3 million tokens, found 15 issues in minutes vs weeks for a human team.</p>
+  </div>
+
+  <h3>6.3 — Git Worktrees (Parallel Feature Development)</h3>
+  <p>Multiple isolated working directories that share the same git history. Each directory can have its own Claude instance working on a different feature.</p>
+
+  <div class="key-insight">
+    <div class="key-insight-label">Why Worktrees Matter</div>
+    <p>Without worktrees, two Claude instances editing the same file will conflict. With worktrees, each works in its own folder on its own branch. Real example: Built 4 pages simultaneously, then merged them together.</p>
+  </div>
+
+  <p><strong>Rule:</strong> Specify in your prompts/CLAUDE.md: "Work only in your worktree folder. Don't modify files outside it." This prevents merge conflicts.</p>
+
+  <div class="exercise-block">
+    <div class="exercise-header">
+      <div class="exercise-icon">&gt;</div>
+      <span class="exercise-title">Exercise: Parallelize Project Alpha with Worktrees</span>
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">1</span> Initialize git in Project Alpha and commit everything
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">2</span> Create 3 git worktrees for about.html, services.html, and portfolio.html
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">3</span> Open 3 IDE windows, launch Claude Code in each
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">4</span> Give each Claude the same design instruction matching index.html style
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">5</span> Merge all three feature branches into main
+    </div>
+    <div class="exercise-step">
+      <span class="step-number">6</span> Verify styling consistency and compare <code>/cost</code> across sessions
+    </div>
+  </div>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Checkpoint</div>
+    <p>You pass Chapter 6 if you can explain when parallelization saves time vs. wastes money, and have successfully used worktrees at least once.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 7: ENTERPRISE ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 07</div>
+    <h2 class="section-title">Enterprise & Business Setup</h2>
+    <span class="section-time">~30 minutes</span>
+  </div>
+
+  <h3>7.1 — How to Set Up Claude Code for a Company</h3>
+
+  <h4>Step 1: Choose the Right Plan</h4>
+  <ul>
+    <li><strong>Team plan:</strong> For small teams, shared billing, basic admin controls</li>
+    <li><strong>Enterprise plan:</strong> SSO, managed settings, compliance API, IT controls</li>
+    <li>Premium seats = Claude Code access. Standard seats = no Claude Code.</li>
+  </ul>
+
+  <h4>Step 2: Deploy Managed Settings (Enterprise Only)</h4>
+  <p>The IT/DevOps team deploys <code>managed-settings.json</code> at the system level:</p>
+  <ul>
+    <li>macOS: <code>/Library/Application Support/ClaudeCode/managed-settings.json</code></li>
+    <li>Linux: <code>/etc/claude-code/managed-settings.json</code></li>
+    <li>Windows: <code>C:\Program Files\ClaudeCode\managed-settings.json</code></li>
+  </ul>
+  <p>This is the enterprise CLAUDE.md. It <strong>CANNOT</strong> be overridden by any user or project settings.</p>
+
+  <h4>Steps 3-5: Project Configuration</h4>
+  <ol start="3">
+    <li>Create the project CLAUDE.md with WHY-WHAT-HOW framework</li>
+    <li>Set up shared .claude/ configuration (settings.json, rules/, skills/, .mcp.json)</li>
+    <li>Configure hooks for quality guarantees (deterministic, unlike CLAUDE.md rules)</li>
+  </ol>
+
+  <h3>7.2 — The Hooks System (Deterministic Automation)</h3>
+
+  <div class="key-insight">
+    <div class="key-insight-label">Critical Difference</div>
+    <p>Unlike CLAUDE.md instructions (which Claude may sometimes ignore), hooks are DETERMINISTIC — they ALWAYS execute.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Event</th><th>When It Fires</th><th>Can Block Claude?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>SessionStart</strong></td><td>Session begins</td><td>No</td></tr>
+      <tr><td><strong>UserPromptSubmit</strong></td><td>You send a message</td><td>Yes</td></tr>
+      <tr><td><strong>PreToolUse</strong></td><td>Before Claude uses a tool</td><td>Yes (can deny or modify)</td></tr>
+      <tr><td><strong>PostToolUse</strong></td><td>After a tool succeeds</td><td>No (feedback only)</td></tr>
+      <tr><td><strong>Stop</strong></td><td>Claude finishes responding</td><td>Yes</td></tr>
+      <tr><td><strong>SubagentStart</strong></td><td>Sub-agent spawned</td><td>No (inject context)</td></tr>
+      <tr><td><strong>TaskCompleted</strong></td><td>Task marked complete</td><td>Yes (quality gate)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>7.3 — Business Scenario Playbooks</h3>
+
+  <h4>Scenario A: SaaS Startup (8 developers, skeptical CTO)</h4>
+  <ol>
+    <li>Start with a 2-day paid audit ($5,000) — measure current workflow baselines</li>
+    <li>Identify 3 highest-ROI use cases (usually: test writing, boilerplate, documentation)</li>
+    <li>Create CLAUDE.md for their repo using WHY-WHAT-HOW framework</li>
+    <li>Set up .claude/settings.json with conservative permissions</li>
+    <li>Train 3 pilot developers for one week</li>
+    <li>Measure: PRs per week, time-to-merge, bug rate</li>
+    <li>Present results to CTO with before/after data &rarr; convert to full rollout</li>
+  </ol>
+
+  <h4>Scenario B: Marketing Agency (15-person team, no developers)</h4>
+  <ol>
+    <li>Focus on skills: email classification, lead scoring, report generation</li>
+    <li>Set up Team plan (not Enterprise)</li>
+    <li>Create 3-5 skills for their most repetitive workflows</li>
+    <li>Train team on invoking skills (they don't need to understand internals)</li>
+    <li>Measure: hours saved per week per person &times; hourly cost = ROI</li>
+    <li>Monthly retainer for optimization and new skill creation</li>
+  </ol>
+
+  <h4>Scenario C: Enterprise (200+ developers, compliance requirements)</h4>
+  <ol>
+    <li>Work with IT to deploy managed-settings.json via MDM</li>
+    <li>Set up SSO integration</li>
+    <li>Create company-wide CLAUDE.md standards (managed policy tier)</li>
+    <li>Deploy hooks: PostToolUse for linting, PreToolUse for security scanning</li>
+    <li>Pilot with 20 developers across 3 teams for 4 weeks</li>
+    <li>Measure with full telemetry (Prometheus + dashboards)</li>
+    <li>Phased rollout over 12 weeks with weekly ROI reporting</li>
+  </ol>
+
+  <h3>7.4 — Security Best Practices for Client Work</h3>
+  <ul>
+    <li>Never run Claude Code as root</li>
+    <li>Block access to .env, ~/.ssh/, secrets/ directories</li>
+    <li>Deny curl/wget by default (prevents data exfiltration)</li>
+    <li>Enable sandbox mode for bash commands</li>
+    <li>For monetization: have a developer review authentication and authorization at minimum</li>
+  </ul>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Checkpoint</div>
+    <p>You pass Chapter 7 if you can walk through Scenario A (SaaS startup) from memory — the 7 steps, in order, with the reasoning behind each.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 8: ROI & PITCHING ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 08</div>
+    <h2 class="section-title">ROI, Pricing & Pitching AI Solutions</h2>
+    <span class="section-time">~30 minutes</span>
+  </div>
+
+  <h3>8.1 — The Honest Data Landscape</h3>
+
+  <h4>The Positive Case:</h4>
+  <ul>
+    <li>Developers complete tasks <strong>55% faster</strong> with AI assistance (GitHub/Microsoft study)</li>
+    <li>PR turnaround dropped <strong>75%</strong> — from 9.6 days to 2.4 days (GitHub Copilot data)</li>
+    <li>84% of developers now use AI tools regularly (Stack Overflow 2025)</li>
+    <li>Teams with heavy AI use complete 21% more tasks and merge 98% more PRs</li>
+  </ul>
+
+  <h4>The Cautionary Case (use this for credibility — never hide it):</h4>
+  <ul>
+    <li>Experienced open-source developers were <strong>19% SLOWER</strong> with AI (METR randomized controlled trial)</li>
+    <li>75% of orgs see NO measurable performance gains despite individual improvements</li>
+    <li>Only 5% of companies achieve substantial AI value at scale</li>
+    <li>42% of companies abandoned most AI initiatives in H1 2025</li>
+  </ul>
+
+  <div class="key-insight">
+    <div class="key-insight-label">What This Means</div>
+    <p>A realistic, defensible productivity improvement range is <strong>10-30%</strong>, not the 55% headline number. The tool alone is NOT the value — the implementation, training, and workflow redesign is where real ROI lives. This is exactly why consultants have a massive market opportunity.</p>
+  </div>
+
+  <h3>8.2 — Core ROI Formulas (The 3 You Actually Need)</h3>
+
+  <div class="formula-block">
+    <div class="formula-title">Formula 1: Basic Time-Savings ROI</div>
+    <div class="formula-content">
+      Monthly Value Created = (Hours Saved per Week &times; 4.33) &times; Hourly Rate<br>
+      Monthly Net Benefit = Monthly Value Created - Monthly Tool Cost<br>
+      Annual ROI = (Annual Net Benefit / Annual Tool Cost) &times; 100%
+    </div>
+    <div class="formula-example">
+      <strong>Worked example:</strong><br>
+      Developer salary: $120K/yr &rarr; loaded cost $162K &rarr; hourly rate $78<br>
+      Hours saved: 3/week (conservative)<br>
+      Monthly value: 13 hrs &times; $78 = $1,012<br>
+      Monthly tool cost: $20 (Pro plan)<br>
+      Monthly net benefit: $992<br>
+      <strong>Annual ROI: 4,962% | Payback: &lt; 1 week</strong>
+    </div>
+  </div>
+
+  <div class="formula-block">
+    <div class="formula-title">Formula 2: FTE Equivalence (Best for Executive Pitches)</div>
+    <div class="formula-content">
+      FTE Equivalence = Total AI-Automated Hours per Month / 173.33
+    </div>
+    <div class="formula-example">
+      <strong>Worked example:</strong><br>
+      10 developers, each saving 3 hrs/week = 130 hrs/month saved<br>
+      FTE Equivalence: 0.75 FTE<br>
+      <strong>Translation: "Claude Code gives your 10-person team the output of 10.75 developers for the cost of 0.07 of a developer."</strong>
+    </div>
+  </div>
+
+  <div class="formula-block">
+    <div class="formula-title">Formula 3: Cost-Per-Task Before/After (Most Persuasive)</div>
+    <div class="formula-content">
+      Savings Per Task = (Time Before &times; Hourly Rate) - ((Time After &times; Hourly Rate) + AI Cost)<br>
+      Annual Savings = Savings Per Task &times; Tasks Per Year
+    </div>
+    <div class="formula-example">
+      <strong>Worked example:</strong><br>
+      Task: Writing unit tests<br>
+      Before: 4 hrs &times; $78 = $312<br>
+      After: 1.5 hrs &times; $78 + $0.50 = $117.50<br>
+      Savings per occurrence: $194.50 (62% reduction)<br>
+      <strong>If done 3x/week: $30,342 annual savings per developer</strong>
+    </div>
+  </div>
+
+  <h3>8.3 — Break-Even Analysis</h3>
+
+  <table>
+    <thead>
+      <tr><th>Plan</th><th>Monthly Cost</th><th>Break-even at $78/hr</th><th>Break-even at $130/hr</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pro ($20/mo)</td><td>$20</td><td>15 minutes/month</td><td>9 minutes/month</td></tr>
+      <tr><td>Max 5x ($100/mo)</td><td>$100</td><td>1.3 hours/month</td><td>46 minutes/month</td></tr>
+      <tr><td>Max 20x ($200/mo)</td><td>$200</td><td>2.6 hours/month</td><td>1.5 hours/month</td></tr>
+      <tr><td>Team Premium ($150/person)</td><td>$150</td><td>1.9 hours/month</td><td>1.2 hours/month</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Translation for clients:</strong> "Even the most expensive plan pays for itself if each person saves 3 hours a month. Most save 3 hours a WEEK."</p>
+
+  <h3>8.4 — How to Pitch AI Services</h3>
+
+  <p><strong>The 7-Step Pitch Structure (Proven B2B Framework):</strong></p>
+  <ol>
+    <li><strong>PAIN</strong> &rarr; Identify the client's specific cost/time problem</li>
+    <li><strong>VALUE</strong> &rarr; Quantify what solving it is worth (use the formulas above)</li>
+    <li><strong>PROOF</strong> &rarr; Show benchmarks, case studies, or Project Alpha as a demo</li>
+    <li><strong>SOLUTION</strong> &rarr; Explain how Claude Code + your setup solves their problem</li>
+    <li><strong>CASE STUDY</strong> &rarr; Reference a comparable implementation</li>
+    <li><strong>PLAN</strong> &rarr; Outline the implementation roadmap</li>
+    <li><strong>PRICING</strong> &rarr; Present your fee as a fraction of the value created</li>
+  </ol>
+
+  <div class="key-insight">
+    <div class="key-insight-label">The 5x Rule for Value-Based Pricing</div>
+    <p>Charge no more than 20% of the value you create. The client gets 5x return on your fee.</p>
+  </div>
+
+  <h4>Service Tiers:</h4>
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Price Range</th><th>Duration</th><th>What You Deliver</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>AI Readiness Audit</td><td>$3,000-$8,000</td><td>1-2 weeks</td><td>Workflow assessment, ROI projection, roadmap</td></tr>
+      <tr><td>Implementation Package</td><td>$10,000-$40,000</td><td>2-8 weeks</td><td>Full deployment, CLAUDE.md, training, 30-day measurement</td></tr>
+      <tr><td>Monthly Retainer</td><td>$2,000-$5,000/mo</td><td>Ongoing</td><td>ROI reporting, optimization, new use cases</td></tr>
+    </tbody>
+  </table>
+
+  <h3>8.5 — Objection Handling (Memorize These)</h3>
+
+  <div class="objection">
+    <div class="objection-q">"We can set up Claude Code ourselves."</div>
+    <div class="objection-a">"Absolutely. The question is whether you capture 10% of the value or 80%. BCG's data shows 60% of organizations get no meaningful return from AI. The difference is the implementation, not the tool."</div>
+  </div>
+
+  <div class="objection">
+    <div class="objection-q">"The productivity studies show mixed results."</div>
+    <div class="objection-a">"You're right — that's exactly why I start with a paid audit. I measure YOUR workflows, identify YOUR highest-impact areas, and give you realistic projections before you commit."</div>
+  </div>
+
+  <div class="objection">
+    <div class="objection-q">"AI tools change so fast, why invest in setup now?"</div>
+    <div class="objection-a">"The tools improve, but organizational capabilities — workflows, prompt engineering, measurement — take months to build. Companies that start now compound their advantage."</div>
+  </div>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Checkpoint</div>
+    <p>You pass Chapter 8 if you can calculate break-even for any Claude Code plan in your head, recite the 7-step pitch structure, and explain the 5x pricing rule.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 9: TROUBLESHOOTING ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 09</div>
+    <h2 class="section-title">Troubleshooting & Cost Management</h2>
+    <span class="section-time">~20 minutes</span>
+  </div>
+
+  <h3>9.1 — Common Failures and How to Fix Them</h3>
+
+  <table>
+    <thead>
+      <tr><th>Problem</th><th>Symptom</th><th>Fix</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Token limit hit</strong></td>
+        <td>Claude stops or gives degraded output</td>
+        <td>Run <code>/compact</code>. If critical, <code>/clear</code> and start fresh with focused prompt</td>
+      </tr>
+      <tr>
+        <td><strong>Context pollution</strong></td>
+        <td>Claude confuses different parts or repeats mistakes</td>
+        <td>New session (<code>/clear</code>). Copy only essential context to new prompt</td>
+      </tr>
+      <tr>
+        <td><strong>MCP won't connect</strong></td>
+        <td>Error on startup or "tool not available"</td>
+        <td>Check .mcp.json syntax. Restart Claude Code. Verify MCP server is running</td>
+      </tr>
+      <tr>
+        <td><strong>CLAUDE.md ignored</strong></td>
+        <td>Claude does what you told it not to</td>
+        <td>Move critical rules to TOP (primacy bias). Use "IMPORTANT:" prefix. Convert to hook if persistent</td>
+      </tr>
+      <tr>
+        <td><strong>Sub-agent garbage</strong></td>
+        <td>Sub-agent output is wrong or incomplete</td>
+        <td>Simplify the task. Give ONE clear job. Check that agent spec has right tools listed</td>
+      </tr>
+      <tr>
+        <td><strong>Session hangs</strong></td>
+        <td>No output for 30+ seconds</td>
+        <td>Wait 30s. If stuck, Ctrl+C and retry. Check <code>/context</code> — may be near token limit</td>
+      </tr>
+      <tr>
+        <td><strong>Wrong mode</strong></td>
+        <td>Claude asks permission for everything (or never asks)</td>
+        <td>Check status bar. Press Shift+Tab to cycle modes</td>
+      </tr>
+      <tr>
+        <td><strong>Hook blocks everything</strong></td>
+        <td>Claude can't complete any action</td>
+        <td>Check settings.json hooks section. Test hooks with simple commands first</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>9.2 — Cost Management as an Operational Discipline</h3>
+
+  <h4>Cost Optimization Strategies:</h4>
+  <ol>
+    <li><strong>Use <code>/compact</code> proactively</strong> — don't wait until you hit limits. Compact after each major task</li>
+    <li><strong>Start new sessions for new tasks</strong> — don't carry context from one task into another</li>
+    <li><strong>Use Sonnet for sub-agents</strong> — cheaper and fast enough. Reserve Opus for main session</li>
+    <li><strong>Convert frequently-used MCPs to skills</strong> — 60 tokens vs. 1,600 tokens per tool</li>
+    <li><strong>Remove unused MCPs</strong> — each loaded tool eats context even if unused</li>
+    <li><strong>Keep CLAUDE.md under 60 lines</strong> — every line costs tokens on EVERY prompt</li>
+  </ol>
+
+  <h4>Monthly Cost Estimation:</h4>
+  <table>
+    <thead>
+      <tr><th>Use Pattern</th><th>Estimated Monthly Cost</th><th>Best Plan</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Light (1-2 hrs/day)</td><td>$20-$40</td><td>Pro</td></tr>
+      <tr><td>Moderate (3-4 hrs/day)</td><td>$60-$100</td><td>Max 5x</td></tr>
+      <tr><td>Heavy (6+ hrs/day)</td><td>$150-$200</td><td>Max 20x</td></tr>
+      <tr><td>Team (10 devs, moderate)</td><td>$1,000-$1,500</td><td>Team Premium</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Warning Signs ROI Isn't Being Captured:</h4>
+  <ul>
+    <li>Less than 70% weekly adoption &rarr; adoption problem, not tool problem</li>
+    <li>Flat sprint velocity &rarr; bottleneck elsewhere (code review, QA)</li>
+    <li>Rising bug rates &rarr; AI code not being reviewed properly</li>
+    <li>High token costs + low output &rarr; wrong tasks or bad prompting &rarr; training needed</li>
+  </ul>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Checkpoint</div>
+    <p>You pass Chapter 9 if you can diagnose and fix at least 5 of the 8 common failures from memory, and explain how to keep monthly costs under control for a 10-person team.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PART 10: TEMPLATES ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Chapter 10</div>
+    <h2 class="section-title">Templates & Checklists</h2>
+    <span class="section-time">Reference Material</span>
+  </div>
+
+  <p>No study time needed — this is reference material to copy-paste when needed.</p>
+
+  <div class="checklist">
+    <div class="checklist-title">New Project Checklist (Any Project Type)</div>
+    <div class="checklist-item">1. Create project folder</div>
+    <div class="checklist-item">2. Open in IDE with Claude Code</div>
+    <div class="checklist-item">3. Run /init to auto-generate CLAUDE.md</div>
+    <div class="checklist-item">4. Edit CLAUDE.md: trim to &lt;60 lines using WHY-WHAT-HOW framework</div>
+    <div class="checklist-item">5. Create .claude/settings.json with basic permissions</div>
+    <div class="checklist-item">6. If team project: commit CLAUDE.md + .claude/ to git</div>
+    <div class="checklist-item">7. If complex project: switch to Plan Mode before building</div>
+    <div class="checklist-item">8. Start building with Task &rarr; Execute &rarr; Verify &rarr; Iterate loop</div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-title">Client/Company Setup Checklist</div>
+    <div class="checklist-item">1. Determine plan type (Team vs Enterprise)</div>
+    <div class="checklist-item">2. Set up managed-settings.json (enterprise) or shared settings.json (team)</div>
+    <div class="checklist-item">3. Create project CLAUDE.md with WHY-WHAT-HOW framework</div>
+    <div class="checklist-item">4. Set up .claude/rules/ for team coding standards</div>
+    <div class="checklist-item">5. Create .claude/skills/ for repeatable workflows</div>
+    <div class="checklist-item">6. Configure .mcp.json for approved external tools</div>
+    <div class="checklist-item">7. Set up hooks for quality guarantees (linting, testing)</div>
+    <div class="checklist-item">8. Create .claude/agents/ for standard sub-agents</div>
+    <div class="checklist-item">9. Configure .gitignore for sensitive files</div>
+    <div class="checklist-item">10. Measure baseline metrics for 4 weeks before rollout</div>
+    <div class="checklist-item">11. Document the setup in the project README</div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-title">ROI Pitch Preparation Checklist</div>
+    <div class="checklist-item">1. Research client's team size and average developer salary</div>
+    <div class="checklist-item">2. Identify 3-5 highest-frequency tasks AI can accelerate</div>
+    <div class="checklist-item">3. Calculate break-even hours for their most likely plan</div>
+    <div class="checklist-item">4. Build before/after cost-per-task comparison (Formula 3)</div>
+    <div class="checklist-item">5. Calculate FTE equivalence (Formula 2) — the executive hook</div>
+    <div class="checklist-item">6. Prepare the ROI slide</div>
+    <div class="checklist-item">7. Rehearse objection handling (3 standard objections)</div>
+    <div class="checklist-item">8. Price your service using the 5x rule (&le;20% of value created)</div>
+  </div>
+
+  <h3>CLAUDE.md Templates</h3>
+
+  <div class="template-block">
+    <div class="template-label">Template: Website Project</div>
+    <pre><code># [Project Name] — Marketing website for [Client]
+
+## Stack
+- HTML/CSS/JS, Tailwind CSS, deployed on Netlify
+
+## Structure
+- /index.html (homepage), /about.html, /contact.html
+- /assets/images/, /assets/css/
+
+## Design Workflow
+- Use screenshot loop: reference design → rebuild → compare → iterate
+- Resize reference images to <5MB before sharing
+
+## Deployment
+- netlify deploy --prod
+
+## Don'ts
+- Don't add JavaScript frameworks unless explicitly requested
+- Don't modify files in /assets/vendor/</code></pre>
+  </div>
+
+  <div class="template-block">
+    <div class="template-label">Template: Full-Stack App</div>
+    <pre><code># [App Name] — [One-line purpose]
+
+## Stack
+- Next.js 14, Tailwind CSS, Shadcn UI, Supabase (auth + DB), Stripe
+
+## Structure
+- /app (pages + API routes), /components, /lib (utilities), /types
+
+## Commands
+- npm run dev (local server on :3000)
+- npm run build (production build)
+- npx supabase db push (sync database)
+
+## Architecture decisions
+- App Router (not Pages Router) for server components
+- Supabase Row Level Security for all tables
+
+## Don'ts
+- NEVER hardcode API keys — use .env
+- Don't charge money without security audit</code></pre>
+  </div>
+
+  <div class="template-block">
+    <div class="template-label">Template: Automation Project</div>
+    <pre><code># [Automation Name] — [What it does]
+
+## Stack
+- Python scripts, [MCP integrations if any], Modal for API deployment
+
+## Structure
+- .claude/skills/[name]/SKILL.md (orchestrator)
+- .claude/skills/[name]/scripts/ (implementations)
+
+## Workflow
+- Test with 25-100 items before full run
+- Add timing instrumentation to every step
+- Sub-agent outputs must be minimal (IDs only, not full data)
+
+## Scaling
+- Serial first → sub-agents for parallelization → agent teams only if justified
+- 10 sub-agents at 95% success = 59% total success — keep tasks simple</code></pre>
+  </div>
+
+  <h3>The Boris Cherny Workflow (Creator of Claude Code)</h3>
+  <ul>
+    <li>Runs 5+ parallel Claude sessions, uses system notifications to know when each needs input</li>
+    <li>Uses Opus with thinking mode for everything ("almost always faster in the end")</li>
+    <li>Most sessions start in Plan Mode &rarr; iterates on plan &rarr; switches to auto-accept edits</li>
+    <li>Team shares one CLAUDE.md in git, whole team updates it multiple times a week</li>
+    <li>"Give Claude a way to verify its work — it will 2-3x the quality"</li>
+    <li>Voice dictation for all prompts (3x faster, more detailed)</li>
+    <li>PostToolUse hooks auto-format code (handling the "final 10%")</li>
+  </ul>
+
+  <div class="template-block">
+    <div class="template-label">Template: Monthly ROI Report (For Client Retainers)</div>
+    <pre><code>═══════════════════════════════════════════
+    CLAUDE CODE ROI REPORT — [Month/Year]
+═══════════════════════════════════════════
+
+COST SUMMARY
+  Total Claude Code spend:              $[X]
+  Per-developer average:                $[X]
+  Cost per pull request:                $[X]
+
+PRODUCTIVITY IMPACT
+  PRs merged (baseline / current):      [X] / [X] ([+X%])
+  Avg PR cycle time (baseline / now):   [X] days / [X] days ([-X%])
+  Estimated hours saved this month:     [X] hours
+
+FINANCIAL IMPACT
+  Value of time saved:                  $[X]
+  Tool cost:                            $[X]
+  Net benefit this month:               $[X]
+  Cumulative ROI:                       [X]%
+  FTE equivalence gained:               [X]
+
+RECOMMENDATIONS
+  - [Optimization opportunities]
+  - [Training needs identified]
+═══════════════════════════════════════════</code></pre>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ APPENDIX ═══════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">Appendix</div>
+    <h2 class="section-title">Power User Tips, Resources & Self-Assessment</h2>
+  </div>
+
+  <h3>Key People to Follow</h3>
+  <table>
+    <thead>
+      <tr><th>Person</th><th>Handle</th><th>Why Follow</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Boris Cherny</strong></td><td>@bcherny</td><td>Creator of Claude Code — most authoritative voice</td></tr>
+      <tr><td><strong>Santiago</strong></td><td>@svpino</td><td>Practical CLAUDE.md rules, /insights trick, auto-updating CLAUDE.md</td></tr>
+      <tr><td><strong>Andrej Karpathy</strong></td><td>@karpathy</td><td>Now 80% agent coding, called it a "phase shift in software engineering"</td></tr>
+      <tr><td><strong>John O'Nolan</strong></td><td>@JohnONolan</td><td>Ghost CMS creator, the "kill-the-planner" multi-agent technique</td></tr>
+      <tr><td><strong>Shrivu Shankar</strong></td><td></td><td>Deep technical analysis of every Claude Code feature</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Essential GitHub Repos</h3>
+  <ul>
+    <li><code>affaan-m/everything-claude-code</code> — 45.5K+ stars, complete config collection (13 agents, 37+ skills, 31+ commands)</li>
+    <li><code>anthropics/skills</code> — Official Anthropic skills repository</li>
+    <li><code>ComposioHQ/awesome-claude-skills</code> — Curated skills collection</li>
+    <li><code>wshobson/commands</code> — 57 production-ready slash commands</li>
+    <li><code>rohitg00/pro-workflow</code> — Battle-tested workflows with memory banks</li>
+  </ul>
+
+  <h3>Advanced Techniques</h3>
+
+  <div class="pro-tip">
+    <div class="pro-tip-label">Santiago's Self-Updating CLAUDE.md Rule</div>
+    <p style="margin:0;">"Every time I correct you, add a new rule to the CLAUDE.md file so it never happens again."</p>
+  </div>
+
+  <div class="pro-tip">
+    <div class="pro-tip-label">O'Nolan's "Kill the Planner" Technique</div>
+    <p style="margin:0;">
+      1. Have Claude create a plan in a markdown file (not plan mode)<br>
+      2. Kill that session (Ctrl+C)<br>
+      3. New Claude: "A previous agent made this plan. Review it and call out any overengineering."<br>
+      4. The new Claude (with zero bias) generally produces a better plan
+    </p>
+  </div>
+
+  <div class="pro-tip">
+    <div class="pro-tip-label">The /insights Command (from Santiago)</div>
+    <p style="margin:0;">Run <code>/insights</code>, find the generated report, attach it to a new session: "Read this report and create 10 lessons to improve my Claude Code usage."</p>
+  </div>
+
+  <div class="section-divider">* * *</div>
+
+  <h3>Self-Assessment Rubric</h3>
+  <p>Use this after completing all 9 chapters to verify your mastery. Score yourself honestly.</p>
+
+  <table>
+    <thead>
+      <tr><th>Chapter</th><th>Competency</th></tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="3"><strong>01: Foundations</strong></td><td>I can launch Claude Code and switch between all 4 modes without hesitation</td></tr>
+      <tr><td>I can explain what /context, /compact, /clear, and /cost do</td></tr>
+      <tr><td>I can describe the Task &rarr; Execute &rarr; Verify &rarr; Iterate loop and WHY verification matters</td></tr>
+      <tr><td rowspan="3"><strong>02: CLAUDE.md</strong></td><td>I can write a CLAUDE.md from scratch in under 5 minutes using WHY-WHAT-HOW</td></tr>
+      <tr><td>I can name all 6 tiers of the memory hierarchy and explain override order</td></tr>
+      <tr><td>I can list at least 5 golden rules for writing CLAUDE.md</td></tr>
+      <tr><td rowspan="3"><strong>03: .claude Dir</strong></td><td>I can draw the .claude/ folder tree from memory</td></tr>
+      <tr><td>I can explain WHEN to create each item</td></tr>
+      <tr><td>I understand settings precedence: managed > CLI > local project > shared > user</td></tr>
+      <tr><td rowspan="3"><strong>04: Workflows</strong></td><td>I can describe the screenshot loop step by step</td></tr>
+      <tr><td>I can explain when to use Plan Mode vs Edit mode</td></tr>
+      <tr><td>I have built at least 2 pages using these workflows</td></tr>
+      <tr><td rowspan="3"><strong>05: Skills/MCP</strong></td><td>I can explain the difference between skill, MCP, and sub-agent</td></tr>
+      <tr><td>I can advise a client on WHEN to use each one</td></tr>
+      <tr><td>I can create a SKILL.md with proper frontmatter from scratch</td></tr>
+      <tr><td rowspan="3"><strong>06: Advanced</strong></td><td>I can explain when parallelization saves time vs. wastes money</td></tr>
+      <tr><td>I know the 7x cost multiplier and the probability math (95%^10 = 59%)</td></tr>
+      <tr><td>I have used git worktrees at least once</td></tr>
+      <tr><td rowspan="3"><strong>07: Enterprise</strong></td><td>I can walk through the SaaS startup scenario (7 steps, in order)</td></tr>
+      <tr><td>I can explain managed-settings.json: where it goes, what it controls</td></tr>
+      <tr><td>I understand hooks (deterministic) vs CLAUDE.md rules (suggestions)</td></tr>
+      <tr><td rowspan="4"><strong>08: ROI</strong></td><td>I can calculate break-even for any Claude Code plan in my head</td></tr>
+      <tr><td>I can recite the 7-step pitch structure</td></tr>
+      <tr><td>I can explain the 5x pricing rule and apply it</td></tr>
+      <tr><td>I can handle the 3 standard objections with specific responses</td></tr>
+      <tr><td rowspan="3"><strong>09: Troubleshoot</strong></td><td>I can diagnose and fix at least 5 of the 8 common failures</td></tr>
+      <tr><td>I can estimate monthly costs for different use patterns</td></tr>
+      <tr><td>I know when to use /compact vs /clear vs starting a new session</td></tr>
+    </tbody>
+  </table>
+
+  <br>
+  <table>
+    <thead>
+      <tr><th>Score</th><th>Assessment</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>25+ checked</strong></td><td>Ready to operate as a Claude Code consultant</td></tr>
+      <tr><td><strong>20-24</strong></td><td>Strong foundation, revisit weak areas</td></tr>
+      <tr><td><strong>15-19</strong></td><td>Need more hands-on practice — redo the exercises</td></tr>
+      <tr><td><strong>Below 15</strong></td><td>Re-study from Chapter 1 with more focus on the exercises</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ═══════════════════════ BACK PAGE / CTA ═══════════════════════ -->
+<div class="back-page">
+  <h2>Ready to Master Claude Code?</h2>
+  <p>This manual is just the beginning. Follow me on LinkedIn for daily tips, case studies, and the latest Claude Code strategies that are transforming how teams build software.</p>
+  <div style="margin-top: 40px;">
+    <p style="color: rgba(255,255,255,0.5); font-size: 9pt; letter-spacing: 1px;">CLAUDE CODE MASTERY MANUAL</p>
+    <p style="color: rgba(255,255,255,0.3); font-size: 8pt;">Version 1.0 &mdash; 2025</p>
+  </div>
+</div>
+
+</body>
+</html>

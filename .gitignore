@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Claude Code configuration (development tooling, not part of the website)
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+
+# Working documents (not part of the public website)
+LEARNING_PLAN.md
+LEARNING_PLAN.pdf
+TRANSCRIPT.md
+PLAN_FOR_REVIEW.md
+AI_ROI_Complete_Guide.md
+
+# Build/preview artifacts
+cover-preview.png
+pdf-style.css
+
+# Environment and secrets
+.env
+.env.*
